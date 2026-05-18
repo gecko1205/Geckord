@@ -227,13 +227,11 @@ export default definePlugin({
             document.body.appendChild(btn);
 
             // Checa a cada meio segundo se o usuário está na aba de Quests
-            // @ts-expect-error - Guardamos a referência do intervals
             this.interval = setInterval(() => {
                 const path = window.location.pathname.toLowerCase();
-                const isQuestsTab = path.includes("quest") ||
-                    path.includes("discovery") ||
-                    document.querySelector('[aria-label*="Quest" i]') !== null ||
-                    document.querySelector('[aria-label*="Miss" i]') !== null;
+                const isQuestsTab = path.includes("/quest") ||
+                    path.includes("/discovery") ||
+                    path.includes("/store");
 
                 if (isQuestsTab) {
                     if (btn.style.display === "none") {
@@ -252,7 +250,6 @@ export default definePlugin({
     },
 
     stop() {
-        // @ts-expect-error - Referência do interval
         if (this.interval) clearInterval(this.interval);
         document.getElementById("btn-quest-farmer")?.remove();
     }
