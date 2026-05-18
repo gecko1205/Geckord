@@ -22,7 +22,7 @@ powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckor
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/vencordDesktopPreload.js' -OutFile '%TARGET_DIR%\dist\vencordDesktopPreload.js'"
 
 echo.
-echo Baixando os arquivos de instalação...
+echo Baixando os arquivos do instalador...
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/Vendicated/VencordInstaller/releases/latest/download/VencordInstallerCli.exe' -OutFile '%TARGET_DIR%\Installer\VencordInstallerCli.exe'"
 
 echo.
