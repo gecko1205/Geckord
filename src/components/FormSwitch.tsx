@@ -7,7 +7,7 @@
 import "./FormSwitch.css";
 
 import { classes } from "@utils/misc";
-import type { PropsWithChildren, ReactNode, Key } from "react";
+import type { Key,PropsWithChildren, ReactNode } from "react";
 
 import { Divider } from "./Divider";
 import { Span } from "./Span";
