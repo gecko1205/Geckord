@@ -1,7 +1,7 @@
 @echo off
 title Instalador Oficial do Geckord
 echo ===================================================
-echo             INSTALANDO O GECKORD CLIENT
+echo             INSTALANDO O GECKORD CLIENT            
 echo ===================================================
 echo.
 
@@ -15,14 +15,16 @@ if not exist "%TARGET_DIR%\Installer" mkdir "%TARGET_DIR%\Installer"
 echo.
 echo Baixando os arquivos do Geckord...
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/renderer.js' -OutFile '%TARGET_DIR%\dist\renderer.js'"
+powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/renderer.css' -OutFile '%TARGET_DIR%\dist\renderer.css'"
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/patcher.js' -OutFile '%TARGET_DIR%\dist\patcher.js'"
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/preload.js' -OutFile '%TARGET_DIR%\dist\preload.js'"
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/vencordDesktopRenderer.js' -OutFile '%TARGET_DIR%\dist\vencordDesktopRenderer.js'"
+powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/vencordDesktopRenderer.css' -OutFile '%TARGET_DIR%\dist\vencordDesktopRenderer.css'"
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/vencordDesktopMain.js' -OutFile '%TARGET_DIR%\dist\vencordDesktopMain.js'"
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gecko1205/Geckord/releases/download/devbuild/vencordDesktopPreload.js' -OutFile '%TARGET_DIR%\dist\vencordDesktopPreload.js'"
 
 echo.
-echo Baixando os arquivos do instalador...
+echo Baixando os arquivos de instalação...
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/Vendicated/VencordInstaller/releases/latest/download/VencordInstallerCli.exe' -OutFile '%TARGET_DIR%\Installer\VencordInstallerCli.exe'"
 
 echo.
