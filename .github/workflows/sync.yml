@@ -1,0 +1,21 @@
+name: Sync Upstream and Build
+on:
+    schedule:
+        - cron: '0 4 * * *' # Roda todos os dias às 4:00 AM UTC (1:00 AM BRT)
+    workflow_dispatch: # Permite que você clique em um botão no GitHub para forçar a sincronização na hora
+
+jobs:
+    Sync:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Sync with Upstream
+              uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+              with:
+                  target_sync_branch: main
+                  target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+                  upstream_sync_branch: main
+                  upstream_sync_repo: Vendicated/Vencord
+                  test_mode: false
+
+            # O próprio push do sync acima vai disparar automaticamente o workflow 'Build DevBuild'
+            # que compilará a versão mais recente com o seu plugin embutido!

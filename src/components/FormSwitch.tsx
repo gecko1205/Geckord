@@ -7,7 +7,7 @@
 import "./FormSwitch.css";
 
 import { classes } from "@utils/misc";
-import type { PropsWithChildren, ReactNode } from "react";
+import type { PropsWithChildren, ReactNode, Key } from "react";
 
 import { Divider } from "./Divider";
 import { Span } from "./Span";
@@ -22,6 +22,7 @@ export interface FormSwitchProps {
     className?: string;
     disabled?: boolean;
     hideBorder?: boolean;
+    key?: Key;
 }
 
 export function FormSwitch({ onChange, title, value, description, disabled, className, hideBorder }: FormSwitchProps) {
