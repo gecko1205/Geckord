@@ -8,6 +8,11 @@ jobs:
     Sync:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0 # Garante que todo o histórico do git seja baixado
+
             - name: Sync with Upstream
               uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
               with:
